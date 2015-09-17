@@ -1,0 +1,53 @@
+
+body {
+  font: 12px sans-serif;
+}
+
+path {
+  stroke-width: 1px;
+  stroke: white;
+  fill: #999;
+  cursor: pointer;
+}
+
+path.q0-8 {
+  fill: #005a32;
+}
+
+path.q1-8 {
+  fill: #238443;
+}
+
+path.q2-8 {
+  fill: #41ab5d;
+}
+
+path.q3-8 {
+  fill: #78c679;
+}
+
+path.q4-8 {
+  fill: #addd8e;
+}
+
+path.q5-8 {
+  fill: #d9f0a3;
+}
+
+path.q6-8 {
+  fill: #f7fcb9;
+}
+
+path.q7-8 {
+  fill: #ffffe5;
+}
+
+div.tooltip {
+  position: absolute;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  font-weight: bold;
+  padding: 4px 8px;
+  display: none;
+}
