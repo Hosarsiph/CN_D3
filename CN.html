@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html>
-<HEAD>
+<head>
   <meta charset="utf-8">
-  <LINK href="css/cn.css" rel="stylesheet" type="text/css">
-</HEAD>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link href="css/cn.css" rel="stylesheet" type="text/css">
+</head>
 <body>
-  <div class="map"></div>
+      <header>
+      <div class="container">
+        <h1>MAPA</h1>
+      </div>
+      </header>
+
+
+      <div class="container">
+        <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9" id="map"></div>
+
+        <aside class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+          Lorem ipsum dolor sit amet, id erat signiferumque cum. Maiorum blandit sea id, quando soluta splendide id his, ex pro invidunt facilisis. Dolor quaerendum definitiones eos et, pri ea sale omnis assentior. At nisl verterem ius, usu scripserit consectetuer cu. Autem graecis et sit, solum tibique te cum. Purto ferri ut nam, est ei nulla dicam persius.
+          Eos ut elitr nobis quaestio, an sed virtute consectetuer signiferumque. No vix expetendis dissentiet, per ea incorrupte dissentiet. Mutat oportere reprimique quo eu, ea melius suscipit mea, ne has alii expetenda. Ne pro populo feugiat appetere, ad eam tantas hendrerit.
+          Has ipsum congue torquatos at, quo ex suas omittam apeirian. Eam ei dicat qualisque, usu ea velit ignota. Ut munere persequeris appellantur eum, cu quaestio scriptorem reprehendunt vis. Brute accusata voluptatum ne ius, ullum suscipit no eum, et nec voluptatum concludaturque. No simul legendos forensibus per, semper impedit splendide mei ut. In vide omnis est.
+          In illum omnium oblique his. Eum no graeci diceret probatus, no est cetero tibique vulputate. Aperiam aperiri bonorum ius ea, cu cum nullam scribentur. Mel te ipsum libris. Copiosae interpretaris at ius, mea ut novum tantas officiis, ei nam rebum fierent.
+          Cu solum dignissim voluptatum mel, dicit oportere quo te. Pri nonumy placerat ea, est at putant constituto. Nam omnis inani maiorum id, mundi doctus copiosae ex vim. Eum ut soleat aliquid expetenda, cum iuvaret posidonium an, at sit recteque iudicabit gloriatur. An quem vocent constituam eum, libris ridens an est. Nam ad dicunt mandamus, alii autem quo ad. Eam at velit nonumy senserit, et nibh argumentum inciderint quo.
+        </aside>
+      </div>
+
+      <!--
+      <div class="row">
+        <div class="container">
+            <div id="slider11"></div>
+        </div>
+      </div>
+    -->
+
+  <!-- var attrb = ["Pro_CN_T1", "Prop_CN_T2", "Prop_CN_T3", "Prop_CN_T4", "Prop_CN_T5"]; -->
+  <select id="status" name="status" onChange="slider();">
+    <option value = "Pro_CN_T1">Pro_CN_T1</option>
+    <option value="Prop_CN_T2">Prop_CN_T2</option>
+    <option value="Prop_CN_T3">Prop_CN_T3</option>
+    <option value="Prop_CN_T4">Prop_CN_T4</option>
+    <option value="Prop_CN_T5">Prop_CN_T5</option>
+  </select>
+
 </body>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="d3.slider.js"></script>
 
 <script src="js/cn.js"></script>
 </html>

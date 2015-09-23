@@ -1,6 +1,6 @@
 //Map dimensions (in pixels)
-var width = 1000,
-    height = 800;
+var width = 800,
+    height = 600;
 
 //Map projection
 var projection = d3.geo.mercator()
@@ -13,7 +13,7 @@ var path = d3.geo.path()
     .projection(projection);
 
 //Create an SVG
-var svg = d3.select(".map").append("svg")
+var svg = d3.select("#map").append("svg")
     .attr("width", width)
     .attr("height", height);
 
@@ -34,30 +34,38 @@ var zoom = d3.behavior.zoom()
 
 svg.call(zoom);
 
+
 //Create a tooltip, hidden at the start
-var tooltip = d3.select(".map").append("div").attr("class","tooltip");
+var tooltip = d3.select("#map").append("div").attr("class","tooltip");
 
-d3.json("data/CN.topojson",function(error,geodata) {
-  if (error) return console.log(error); //unknown error, check the console
+// d3.select('#slider11').call(d3.slider().scale(d3.time.scale().domain([new Date(1984,1,1), new Date(2014,1,1)])).axis(d3.svg.axis()).snap(true).value(new Date(2000,1,1)));
 
+d3.select('#slider11').call(d3.slider().scale(d3.time.scale().domain([new Date(1984,1,1), new Date(2014,1,1)])).axis(d3.svg.axis()).snap(true).value(new Date(2000,1,1)));
 
-  //Create a path for each map feature in the data
-  //var datas = ["Pro_CN_T1", "Prop_CN_T2", "Prop_CN_T3", "Prop_CN_T4", "Prop_CN_T5"];
-  features.selectAll("path")
-    .data(topojson.feature(geodata,geodata.objects.collection).features) //generate features from TopoJSON
-    .enter()
-    .append("path")
-    .attr("d",path)
-    .attr("class", function(d) {
-                    return (typeof color(d.properties.Pro_CN_T1) == "string" ? color(d.properties.Pro_CN_T1) : "");
-                    })
-    .on("mouseover",showTooltip)
-    .on("mousemove",moveTooltip)
-    .on("mouseout",hideTooltip)
-    .on("click",clicked);
+function slider() {
+  var propiedades = document.getElementById("status").value;
+  d3.json("data/CN.topojson",function(error,geodata) {
+    if (error) return console.log(error); //unknown error, check the console
+    //Create a path for each map feature in the data
+    // var attrb = ["Pro_CN_T1", "Prop_CN_T2", "Prop_CN_T3", "Prop_CN_T4", "Prop_CN_T5"];
+    var sld = features.selectAll("path")
+      .data(topojson.feature(geodata,geodata.objects.collection).features) //generate features from TopoJSON
+      sld.enter()
+      .append("path")
+      sld.attr("d",path)
+      sld.transition()
+      .attr("class", function(d) {
+                      var valor = d.properties[propiedades];
+                      return (typeof color(valor) == "string" ? color(valor) : "");
+                      })
+      sld.exit().remove()
+      .on("mouseover",showTooltip)
+      .on("mousemove",moveTooltip)
+      .on("mouseout",hideTooltip)
+      .on("click",clicked);
+  });
 
-});
-
+}
 
 
 // Add optional onClick events for features here
